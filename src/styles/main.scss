@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+// Переменные
+// Цвета:
+$dark: #333333;
+$accent: #66C05D;
+$gray: #EFEFEF;
+$darkGray: #828282;
+$lightGray: #C4C4C4;
+$white: #FFFFFF;
+$black: #000000;
+// Толщина текста:
+$medium: 500;
+$bold: 700;
+
+// Основа
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: $gray;
+  font-size: 14px;
+}
+
+.wrapper {
+  max-width: 1110px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0 auto;
+}
+
+.bg-white {
+  background-color: $white;
+}
+
+.hr {
+  border: none;;
+  height: 1px;
+  background-color: $gray;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.link {
+  text-decoration: none;
+  transition: 0.2s;
+  &:hover {
+    color: $accent;
+  }
+}
+
+.btn {
+  background-color: transparent;
+  border: solid 2px;
+  border-radius: 40px;
+  padding: 12px 26px;
+  cursor: pointer;
+  border-color: $accent;
+  transition: 0.2s;
+    &:hover {
+      background-color: $accent;
+      color: $white;
+      border-color: $gray;
+    }
+}
+
+// Навигационная панель
+.nav {
+  &__list {
+    gap: 30px;
+  }
+  &__link {
+    font-size: 14px;
+    color: $dark;
+  }
+}
+
+// Header сайта
+.header {
+  display: flex;
+  flex-direction: column;
+
+  &__logo {
+    display: block;
+    width: 254px;
+    height: 80px;
+    background-image: url('../images/logo.svg');
+    cursor: pointer;
+  }
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  &__feedback {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  &__phone {
+    font-size: 16px;
+  }
+  &__list {
+    gap: 40px;
+    padding: 15px 0;
+  }
+  &__link {
+    font-size: 16px;
+    color: $black;
+  }
+}
+
+// Секция "Баннер"
+.banner {
+  background-image: url('../images/bg.png');
+  background-position: center;
+  background-size: cover;
+  padding: 160px 0;
+  color: $white;
+  margin-bottom: 80px;
+
+  &__title {
+    font-size: 48px;
+  }
+  &__paragraph {
+    margin-bottom: 40px;
+    line-height: 20px;
+    max-width: 308px;
+  }
+  &__btn {
+    color: $white;
+    border-color: $white;
+    text-decoration: none;
+    padding: 12px 46px;
+    &:hover {
+      background-color: $white;
+      color: $accent;
+      border-color: $gray;
+    }
+  }
+}
+
+// Секция "Каталог"
+.catalog {
+  margin-bottom: 133px;
+}
+.offers {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 0 30px;
+  &__title {
+    font-size: 24px;
+    grid-column: 1/4;
+    grid-row: 1/2;
+    margin-bottom: 38px;
+  }
+  &__img {
+    grid-column: 4/5;
+    grid-row: 1/2;
+    text-align: center;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $white;
+  max-width: 255px;
+  padding: 25px 30px;
+  &__paragraph {
+    color: $dark;
+    text-align: center;
+    max-width: 195px;
+    line-height: 140%;
+  }
+  &__price {
+    font-size: 21px;
+    font-weight: $medium;
+  }
+  &__btn {
+    background-color: $accent;
+    border-color: $accent;
+    color: $white;
+    padding: 9px 40px;
+    letter-spacing: 1.5px;
+  }
+}
+
+.advanced {
+  display: flex;
+  background-color: $accent;
+  color: $white;
+  padding: 35px 40px;
+  justify-content: space-between;
+  &__title {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 25px;
+  }
+  &__paragraph {
+    line-height: 140%;
+    margin-top: 0;
+    margin-bottom: 25px;
+  }
+  &__input {
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    padding: 9px 25px;
+  }
+  &__input::placeholder {
+    color: $lightGray;
+  }
+  &__btn {
+    color: $white;
+    border-color: $white;
+    text-decoration: none;
+    border-radius: 30px;
+    padding: 9px 28px;
+    width: max-content;
+    &:hover {
+      background-color: $white;
+      color: $accent;
+    }
+  }
+}
+
+.advanced_left {
+  grid-column: 1/3;
+  grid-row: 3/4;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.advanced_right {
+  grid-column: 3/5;
+  grid-row: 3/4;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+// Footer сайта
+.footer_bottom {
+  padding: 25px 0;
+  &__paragraph {
+    margin: 0;
+    text-decoration: none;
+    color: $darkGray;
+  }
+}
+
+.footer_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+  &__info {
+    margin-right: 105px;
+  }
+  &__phone {
+    margin-right: 40px;
+    font-size: 16px;
+  }
+}
+
+.footer_bottom {
+  display: flex;
+  justify-content: space-between;
+  &__paragraph {
+    font-size: 12px;
+  }
+}
+
+.social {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  list-style-type: none;
+  padding-left: 0;
+  &__link {
+    display: block;
+    width: 45px;
+    height: 45px;
+    border: 2px solid $accent;
+    border-radius: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  &__link-youtube {
+    background-image: url('../images/youtube.svg');
+  }
+  &__link-vk {
+    background-image: url('../images/vk.svg');
+  }
+  &__link-facebook {
+    background-image: url('../images/facebook.svg');
+  }
+  &__link-instagram {
+    background-image: url('../images/instagram.svg');
+  }
+}
