@@ -13,6 +13,10 @@ $black: #000000;
 $medium: 500;
 $bold: 700;
 
+ul {
+  padding: 0;
+}
+
 // Основа
 body {
   font-family: 'Roboto', sans-serif;
@@ -87,12 +91,16 @@ body {
     width: 254px;
     height: 80px;
     background-image: url('../images/logo.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
     cursor: pointer;
   }
   &__top {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
     padding: 20px;
   }
   &__feedback {
@@ -105,7 +113,7 @@ body {
   }
   &__list {
     gap: 40px;
-    padding: 15px 0;
+    flex-wrap: wrap;
   }
   &__link {
     font-size: 16px;
@@ -116,8 +124,9 @@ body {
 // Секция "Баннер"
 .banner {
   background-image: url('../images/bg.png');
+  background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-color: $accent;
   padding: 160px 0;
   color: $white;
   margin-bottom: 80px;
@@ -149,13 +158,12 @@ body {
 }
 .offers {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 0 30px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px 30px;
   &__title {
     font-size: 24px;
     grid-column: 1/4;
     grid-row: 1/2;
-    margin-bottom: 38px;
   }
   &__img {
     grid-column: 4/5;
@@ -169,7 +177,6 @@ body {
   flex-direction: column;
   align-items: center;
   background-color: $white;
-  max-width: 255px;
   padding: 25px 30px;
   &__paragraph {
     color: $dark;
@@ -301,5 +308,127 @@ body {
   }
   &__link-instagram {
     background-image: url('../images/instagram.svg');
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .offers {
+    grid-template-columns: repeat(2, 1fr);
+    &__title {
+      grid-column: 1/3;
+    }
+    &__img {
+      display: none;
+    }
+  }
+  .advanced_left {
+    grid-column: 1/2;
+    grid-row: 4/5;
+    margin-top: 50px;
+  }
+  .advanced_right {
+    grid-column: 2/3;
+    grid-row: 4/5;
+    margin-top: 50px;
+  }
+  .footer {
+    &_top {
+      flex-direction: column-reverse;
+    }
+  }
+}
+
+@media screen and (max-width: 940px) {
+  .banner {
+    background-image: none;
+    background-color: $accent;
+    text-align: center;
+    padding: 40px;
+    &__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  .offers {
+    grid-template-columns: repeat(2, 1fr);
+    &__title {
+      grid-column: 1/3;
+    }
+    &__img {
+      display: none;
+    }
+  }
+  .advanced_left {
+    grid-column: 1/3;
+    grid-row: 4/5;
+    margin-top: 5px;
+  }
+  .advanced_right {
+    grid-column: 1/3;
+    grid-row: 5/6;
+    margin-top: 5px;
+  }
+  .footer {
+    &_top {
+      flex-direction: column-reverse;
+      &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      &__info {
+        margin-right: auto;
+      }
+      &__phone {
+        margin-right: auto;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .header {
+    &__logo {
+      width: 140px;
+      height: 50px;
+    }
+  }
+  .offers {
+    grid-template-columns: repeat(1, 1fr);
+    &__title {
+      grid-column: 1/2;
+    }
+    &__img {
+      display: none;
+    }
+  }
+  .advanced {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__img {
+      display: none;
+    }
+  }
+  .advanced_left {
+    grid-column: 1/2;
+    grid-row: 6/7;
+    text-align: center;
+  }
+  .advanced_right {
+    grid-column: 1/2;
+    grid-row: 7/8;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .header {
+    &__top {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }
